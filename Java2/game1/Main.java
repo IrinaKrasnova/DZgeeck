@@ -13,12 +13,6 @@ public class Main {
         double catTimeRun=0;
         double robotTimeRun=0;
 
-
-        String luck="успешно";
-        String failure="неуспешно";
-        String situationName;
-        String situationResult;
-
         for (Road road : roads){
             humanTimeRun=humanTimeRun+ road.getTimeToRoad(human);
             robotTimeRun=robotTimeRun+ road.getTimeToRoad(robot);
@@ -28,16 +22,12 @@ public class Main {
         System.out.println( "Робот пробежал за "+robotTimeRun);
         System.out.println( "Кот пробежал за "+catTimeRun);
 
-        CanJump[] arr ={human, robot, cat};
-        int jamplenght=2;
-        for (int i=0; i<arr.length; i++){
-            String nameString= arr[i].getClass().getName()+"может";
-            situationName= " прыгнуть на " + arr[i].jamp(jamplenght) + "м.  Пытается прыгнуть на ";
-            situationResult = (arr[i].jamp(jamplenght)) ? luck : failure;
-            result(nameString,situationName,jamplenght,situationResult);
+        for (Wall wall : walls){
+        System.out.println( wall.Jamp(cat));
+        System.out.println( wall.Jamp(human));
+        System.out.println( wall.Jamp(robot));
         }
+
     }
-    private static void result(String nameAnimal, String situation, float situationlenght, String situationResult) {
-        System.out.println(nameAnimal + situation + situationlenght + "м.  -  " + situationResult);
-    }
+
 }

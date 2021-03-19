@@ -11,10 +11,15 @@ public class Robot implements CanRun, CanJump{
         this.maxJamp = maxJamp;
     }
 
-      @Override
-      public double jamp(int height) {
-         return maxJamp;
-     }
+    @Override
+    public String jamp(int height) {
+        String result;
+        if (maxJamp>height){
+            result="Робот перепрыгнул препятствие";
+        } else {
+            result="Робот не перепрыгнул препятствие";
+        } return result;
+    }
 
 
     @Override

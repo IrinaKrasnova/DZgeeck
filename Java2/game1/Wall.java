@@ -1,13 +1,13 @@
 package Java2.game1;
 
 public class Wall {
-    private int heightWall;
+    private int height;
 
-    public Wall(int heightWall) {
-        this.heightWall = heightWall;
+    public Wall(int height) {
+        this.height = height;
     }
 
-    public double getTimeToWall (CanJump jamper){
-        return jamper.jamp(heightWall);
+    public String Jamp (CanJump jamper){
+       return jamper.jamp(height);
     }
 }

@@ -12,17 +12,21 @@ public class Human implements CanRun, CanJump {
     }
 
     @Override
-    public double jamp(int height) {
-        return maxJamp;
+    public String jamp(int height) {
+        String result;
+        if (maxJamp>height){
+            result="Человек перепрыгнул препятствие";
+        } else {
+            result="Человек не перепрыгнул препятствие";
+        } return result;
+
     }
+
 
     @Override
     public double run(int length) {
-        return maxRun * length;
+        return maxRun*length;
     }
 
-    String getName() {
-        return this.name;
-    }
 }
 
