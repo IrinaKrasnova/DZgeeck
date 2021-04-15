@@ -40,9 +40,12 @@ public class OkkHttpExamples {
         System.out.println(responseString);
 
 
-       String date = objectMapper.readTree(responseString).at("/forecasts").get(0).at("/date").asText();
+        String localDate= objectMapper.readTree(responseString).at("/forecasts").get(0).at("/date").asText();
         String temperature = objectMapper.readTree(responseString).at("/forecasts").get(0).at("/parts/day/temp_avg").asText();
-        System.out.println(date + "  температура воздуха в Сант-Петербурге: "+temperature+ "  градусов");
+        String City=objectMapper.readTree(responseString).at("/geo_object/locality/name").asText();
+        String weatherText=objectMapper.readTree(responseString).at("/fact/season").asText();
+        System.out.println(localDate + "  температура воздуха в  городе  "+City +"  :  "+temperature+ "  градусов");
+
 
 
 //        System.out.println("Код ответа:" + response.code());
